@@ -12,13 +12,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String? selectedValue;
-  
+
   final List<Map<String, String>> items = [
     {"icon": "assets/vietnamIcon.png", "text": "Việt Nam"},
     {"icon": "assets/koreaIcon.png", "text": "Hàn Quốc"},
     {"icon": "assets/brazilIcon.png", "text": "Brazil"},
     {"icon": "assets/united-states.png", "text": "Hoa Kì"},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                 underline: const SizedBox(),
                 onChanged: (String? newValue) {
                   setState(() {
-                    selectedValue = newValue; 
+                    selectedValue = newValue;
                   });
                 },
                 items: items.map((Map<String, String> item) {
@@ -205,60 +206,53 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     _buildPadding(
-                      imagePath: AppImage.iconSpending,
-                      colorCircle: Colors.lightGreen,
-                      text: "Spending",
-                      textMoney: "-\$500",
-                      colorTextMoney: Colors.red
-                    ),
+                        imagePath: AppImage.iconSpending,
+                        colorCircle: Colors.lightGreen,
+                        text: "Spending",
+                        textMoney: "-\$500",
+                        colorTextMoney: Colors.red),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconSalary,
                         colorCircle: Colors.blueGrey,
                         text: "Income",
                         textMoney: "\$3000",
-                        colorTextMoney: Colors.green
-                    ),
+                        colorTextMoney: Colors.green),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconInvoice,
                         colorCircle: Colors.amber,
                         text: "Bills",
                         textMoney: "-\$800",
-                        colorTextMoney: Colors.red
-                    ),
+                        colorTextMoney: Colors.red),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconSave,
                         colorCircle: Colors.amber,
                         text: "Savings",
                         textMoney: "\$1000",
-                        colorTextMoney: Colors.amber
-                    ),
+                        colorTextMoney: Colors.amber),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconSave,
                         colorCircle: Colors.amber,
                         text: "Savings",
                         textMoney: "\$1000",
-                        colorTextMoney: Colors.amber
-                    ),
+                        colorTextMoney: Colors.amber),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconSave,
                         colorCircle: Colors.amber,
                         text: "Savings",
                         textMoney: "\$1000",
-                        colorTextMoney: Colors.amber
-                    ),
+                        colorTextMoney: Colors.amber),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconSave,
                         colorCircle: Colors.amber,
                         text: "Savings",
                         textMoney: "\$1000",
-                        colorTextMoney: Colors.amber
-                    ),
+                        colorTextMoney: Colors.amber),
                   ],
                 ),
               ),
@@ -300,7 +294,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-
                   Image.asset(
                     AppImage.iconMessage,
                     height: 25,
@@ -330,54 +323,58 @@ class _HomePageState extends State<HomePage> {
 
   SizedBox buildDivider() {
     return const SizedBox(
-                  width: 300,
-                  child: Divider(
-                    color: Color(0xFFBDBDBD),
-                    thickness: 1,
-                  ),
-                );
+      width: 300,
+      child: Divider(
+        color: Color(0xFFBDBDBD),
+        thickness: 1,
+      ),
+    );
   }
 
-  Padding _buildPadding({required String imagePath, required colorCircle, required String text, required textMoney, required colorTextMoney}) {
+  Padding _buildPadding(
+      {required String imagePath,
+      required colorCircle,
+      required String text,
+      required textMoney,
+      required colorTextMoney}) {
     return Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: colorCircle,
-                        child: Image.asset(
-                          imagePath,
-                          height: 25,
-                          width: 25,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Text(text),
-                    ],
+      padding: const EdgeInsets.all(12.0),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: colorCircle,
+                    child: Image.asset(
+                      imagePath,
+                      height: 25,
+                      width: 25,
+                    ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(textMoney,style: TextStyle(color: colorTextMoney, fontSize: 20)),
-                      const SizedBox(width: 10),
-                      Image.asset(
-                        AppImage.iconNext2,
-                        height: 10,
-                        width: 10,
-                      ),
-                    ],
-                  )
-                ]
-                ),
+                  const SizedBox(width: 10),
+                  Text(text),
+                ],
               ),
-            );
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(textMoney, style: TextStyle(color: colorTextMoney, fontSize: 20)),
+                  const SizedBox(width: 10),
+                  Image.asset(
+                    AppImage.iconNext2,
+                    height: 10,
+                    width: 10,
+                  ),
+                ],
+              )
+            ]),
+      ),
+    );
   }
 
   Widget _columnCard({required String text, required String imagePath}) {

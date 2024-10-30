@@ -70,7 +70,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     _buildPadding(
                         imagePath: AppImage.iconNightMode,
                         colorCircle: Colors.grey,
-                        text: "Dark Mode"),
+                        text: "Dark Mode",
+                        isDarkMode: true),
                     buildDivider(),
                     _buildPadding(
                         imagePath: AppImage.iconUser,
@@ -168,7 +169,11 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Padding _buildPadding(
-      {required String imagePath, required colorCircle, required String text}) {
+      {required String imagePath,
+      required colorCircle,
+      required String text,
+      bool? isDarkMode}) {
+    bool isSwitched = false;
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Align(
@@ -195,11 +200,22 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
-            Image.asset(
-              AppImage.iconNext2,
-              height: 15,
-              width: 15,
-            ),
+            (isDarkMode == true)
+                ? Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      setState(() {
+                        isSwitched = value;
+                      });
+                    },
+                    activeColor: Colors.green,
+                    inactiveThumbColor: Colors.grey,
+                  )
+                : Image.asset(
+                    AppImage.iconNext2,
+                    height: 15,
+                    width: 15,
+                  ),
           ],
         ),
       ),
