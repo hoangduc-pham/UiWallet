@@ -1,2 +1,4 @@
-![Logo](assets/home.jpg)
-![Logo](assets/profile.jpg)
+<p align="center">
+  <img src="assets/home.jpg" alt="Home Screen" width="200"/>
+  <img src="assets/profile.jpg" alt="Profile Screen" width="200"/>
+</p>
