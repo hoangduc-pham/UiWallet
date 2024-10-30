@@ -24,4 +24,6 @@ class AppImage {
   static const String iconUser = 'assets/user2.png';
   static const String iconVietNam = 'assets/vietnamIcon.png';
   static const String iconWallet = 'assets/wallet-filled-money-tool.png';
+  static const String iconAvatar = 'assets/demo.jpg';
+  static const String iconEdit = 'assets/edit.png';
 }

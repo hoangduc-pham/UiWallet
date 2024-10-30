@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'common/app_img.dart';
+import '../ProfilePage/ProfilePageScreen.dart';
+import '../common/app_img.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -77,15 +78,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ]),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               DropdownButton<String>(
                 alignment: Alignment.center,
                 dropdownColor: Colors.blueGrey,
-                hint: Text("Chọn quốc gia"),
-                style: TextStyle(color: Colors.white),
+                hint: const Text("Chọn quốc gia"),
+                style: const TextStyle(color: Colors.white),
                 value: selectedValue,
-                icon: Icon(Icons.arrow_drop_down, color: Colors.white),
-                underline: SizedBox(),
+                icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
+                underline: const SizedBox(),
                 onChanged: (String? newValue) {
                   setState(() {
                     selectedValue = newValue; 
@@ -102,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                           height: 24,
                           width: 24,
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Text(item['text']!),
                       ],
                     ),
@@ -156,12 +157,22 @@ class _HomePageState extends State<HomePage> {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 15, left: 30, right: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _columnCard(text: "Send", imagePath: AppImage.iconMoney),
+                VerticalDivider(
+                  color: Colors.grey.shade300,
+                  thickness: 1,
+                  endIndent: 10,
+                ),
                 _columnCard(text: "Request", imagePath: AppImage.iconRequest),
+                VerticalDivider(
+                  color: Colors.grey.shade300,
+                  thickness: 1,
+                  endIndent: 10,
+                ),
                 _columnCard(text: "Bank", imagePath: AppImage.iconBank),
               ],
             ),
@@ -295,10 +306,18 @@ class _HomePageState extends State<HomePage> {
                     height: 25,
                     width: 25,
                   ),
-                  Image.asset(
-                    AppImage.iconUserNoColor,
-                    height: 25,
-                    width: 25,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ProfilePage()),
+                      );
+                    },
+                    child: Image.asset(
+                      AppImage.iconUserNoColor,
+                      height: 25,
+                      width: 25,
+                    ),
                   ),
                 ],
               ),
@@ -313,7 +332,7 @@ class _HomePageState extends State<HomePage> {
     return const SizedBox(
                   width: 300,
                   child: Divider(
-                    color: Colors.grey,
+                    color: Color(0xFFBDBDBD),
                     thickness: 1,
                   ),
                 );
