@@ -2,8 +2,9 @@ import 'package:assm6/support_page/suport_page.dart';
 import 'package:flutter/material.dart';
 
 import '../404_page/404_page.dart';
-import '../ProfilePage/ProfilePageScreen.dart';
+import '../ProfilePage/profile_page_screen.dart';
 import '../common/app_img.dart';
+import '../spending_page/spending_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -275,10 +276,18 @@ class _HomePageState extends State<HomePage> {
                     height: 25,
                     width: 25,
                   ),
-                  Image.asset(
-                    AppImage.iconChart,
-                    height: 25,
-                    width: 25,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SpendingPage()),
+                      );
+                    },
+                    child: Image.asset(
+                      AppImage.iconChart,
+                      height: 25,
+                      width: 25,
+                    ),
                   ),
                   InkWell(
                     onTap: () {

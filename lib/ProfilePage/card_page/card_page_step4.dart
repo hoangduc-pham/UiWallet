@@ -1,4 +1,4 @@
-import 'package:assm6/ProfilePage/CardPage/card_page_step5.dart';
+import 'package:assm6/ProfilePage/card_page/card_page_step5.dart';
 import 'package:assm6/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 

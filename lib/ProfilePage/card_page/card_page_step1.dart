@@ -31,7 +31,7 @@ class _CardPageStep1State extends State<CardPageStep1> {
                 style: TextStyle(fontSize: 15), textAlign: TextAlign.center),
             const Spacer(),
             CustomButton(
-              text: "+ Add Your Card",
+              text: "+ Add Your Card", 
               onPressed: () {
                 Navigator.push(
                   context,

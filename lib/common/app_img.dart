@@ -31,4 +31,11 @@ class AppImage {
   static const String image404 = 'assets/404.jpg';
   static const String iconMasterCard = 'assets/shopping.png';
   static const String iconMail = 'assets/email.png';
+  static const String iconDown = 'assets/down.png';
+  static const String iconArrange = 'assets/arrange.png';
+  static const String iconFb = 'assets/facebook.png';
+  static const String iconGg = 'assets/google.png';
+  static const String iconYt = 'assets/play.png';
+  static const String iconWallet2 = 'assets/wallet2.png';
+  static const String iconWallet3 = 'assets/wallet.png';
 }

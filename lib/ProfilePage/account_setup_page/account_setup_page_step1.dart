@@ -2,16 +2,17 @@ import 'package:assm6/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/app_img.dart';
-import 'card_page_step3.dart';
+import '../../widgets/custom_text_field.dart';
+import 'account_setup_page_step2.dart';
 
-class CardPageStep2 extends StatefulWidget {
-  const CardPageStep2({super.key});
+class AccountSetupStep1 extends StatefulWidget {
+  const AccountSetupStep1({super.key});
 
   @override
-  State<CardPageStep2> createState() => _CardPageStep2State();
+  State<AccountSetupStep1> createState() => _AccountSetupStep1State();
 }
 
-class _CardPageStep2State extends State<CardPageStep2> {
+class _AccountSetupStep1State extends State<AccountSetupStep1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,36 +22,24 @@ class _CardPageStep2State extends State<CardPageStep2> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Add Card",
+            const Text("Add your email",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-            const Text("Enter your card info into the box below"),
-            const SizedBox(height: 15),
-            textFieldCustom(
-              title: 'Account Holder Name',
-              hintText: "Full Name",
-            ),
-            const SizedBox(height: 15),
-            textFieldCustom(
+            const Text("This info needs to be accurate with your ID document."),
+            const SizedBox(height: 25),
+            const CustomTextField(
               title: 'Email',
               hintText: "YourName@example.com",
               iconPath: AppImage.iconMail,
               showIcon: true,
             ),
-            const SizedBox(height: 15),
-            textFieldCustom(
-              title: 'Card Number',
-              hintText: "1234 5678        MM/YY    CVV",
-              iconPath: AppImage.iconMasterCard,
-              showIcon: true,
-            ),
-            const SizedBox(height: 30),
+            const Spacer(),
             CustomButton(
               isDisable: true,
-              text: "Verify",
+              text: "Continue",
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CardPageStep3()),
+                  MaterialPageRoute(builder: (context) => const AccountSetupStep2()),
                 );
               },
             ),
@@ -62,9 +51,9 @@ class _CardPageStep2State extends State<CardPageStep2> {
 
   Column textFieldCustom(
       {required String title,
-      required String hintText,
-      String? iconPath,
-      bool showIcon = false}) {
+        required String hintText,
+        String? iconPath,
+        bool showIcon = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -80,13 +69,13 @@ class _CardPageStep2State extends State<CardPageStep2> {
           decoration: InputDecoration(
             prefixIcon: iconPath != null && showIcon
                 ? Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      iconPath,
-                      height: 25,
-                      width: 25,
-                    ),
-                  )
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                iconPath,
+                height: 25,
+                width: 25,
+              ),
+            )
                 : null,
             hintText: hintText,
             hintStyle: TextStyle(

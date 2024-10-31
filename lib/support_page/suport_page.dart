@@ -1,3 +1,4 @@
+import 'package:assm6/support_page/chat_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/app_img.dart';
@@ -29,13 +30,23 @@ class _SupportPageState extends State<SupportPage> {
             const SizedBox(height: 25),
             const Text("CoinPay Support",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-            const Text("Our decided team is here to assist you  with any question or issues related to our Coinpay mobile app",
-                style: TextStyle(fontSize: 15), textAlign: TextAlign.center),
+            const Text(
+                "Our decided team is here to assist you  with any question or issues related to our Coinpay mobile app",
+                style: TextStyle(fontSize: 15),
+                textAlign: TextAlign.center),
             const Spacer(),
-            const CustomButton(
-              showIcon: true,
-              iconPath: Icons.account_tree,
-              text: "Start chat",
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                );
+              },
+              child: const CustomButton(
+                showIcon: true,
+                iconPath: Icons.account_tree,
+                text: "Start chat",
+              ),
             ),
             const SizedBox(height: 10),
             const CustomButton(

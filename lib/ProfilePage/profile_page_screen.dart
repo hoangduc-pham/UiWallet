@@ -1,7 +1,8 @@
-import 'package:assm6/ProfilePage/CardPage/card_page_step1.dart';
+import 'package:assm6/ProfilePage/card_page/card_page_step1.dart';
 import 'package:flutter/material.dart';
 
 import '../common/app_img.dart';
+import 'account_setup_page/account_setup_page_step1.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -74,10 +75,18 @@ class _ProfilePageState extends State<ProfilePage> {
                         text: "Dark Mode",
                         isDarkMode: true),
                     buildDivider(),
-                    _buildPadding(
-                        imagePath: AppImage.iconUser,
-                        colorCircle: Colors.indigo.shade200,
-                        text: "Personal Info"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const AccountSetupStep1()),
+                        );
+                      },
+                      child: _buildPadding(
+                          imagePath: AppImage.iconUser,
+                          colorCircle: Colors.indigo.shade200,
+                          text: "Personal Info"),
+                    ),
                     buildDivider(),
                     InkWell(
                       onTap: () {
