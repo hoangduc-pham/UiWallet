@@ -26,4 +26,9 @@ class AppImage {
   static const String iconWallet = 'assets/wallet-filled-money-tool.png';
   static const String iconAvatar = 'assets/demo.jpg';
   static const String iconEdit = 'assets/edit.png';
+  static const String imageAddCard = 'assets/addCard.jpg';
+  static const String imageSupport = 'assets/suport.jpg';
+  static const String image404 = 'assets/404.jpg';
+  static const String iconMasterCard = 'assets/shopping.png';
+  static const String iconMail = 'assets/email.png';
 }

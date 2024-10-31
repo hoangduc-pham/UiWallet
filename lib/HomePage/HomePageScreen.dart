@@ -1,5 +1,7 @@
+import 'package:assm6/support_page/suport_page.dart';
 import 'package:flutter/material.dart';
 
+import '../404_page/404_page.dart';
 import '../ProfilePage/ProfilePageScreen.dart';
 import '../common/app_img.dart';
 
@@ -278,26 +280,42 @@ class _HomePageState extends State<HomePage> {
                     height: 25,
                     width: 25,
                   ),
-                  Container(
-                    height: 70,
-                    width: 70,
-                    decoration: BoxDecoration(
-                      color: Colors.indigo, // Màu nền của Container
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Image.asset(
-                        AppImage.iconQr,
-                        height: 25,
-                        width: 25,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ErrorPage()),
+                      );
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.indigo, // Màu nền của Container
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Image.asset(
+                          AppImage.iconQr,
+                          height: 25,
+                          width: 25,
+                        ),
                       ),
                     ),
                   ),
-                  Image.asset(
-                    AppImage.iconMessage,
-                    height: 25,
-                    width: 25,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SupportPage()),
+                      );
+                    },
+                    child: Image.asset(
+                      AppImage.iconMessage,
+                      height: 25,
+                      width: 25,
+                    ),
                   ),
                   InkWell(
                     onTap: () {

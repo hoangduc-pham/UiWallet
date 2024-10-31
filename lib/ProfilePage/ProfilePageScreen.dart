@@ -1,3 +1,4 @@
+import 'package:assm6/ProfilePage/CardPage/card_page_step1.dart';
 import 'package:flutter/material.dart';
 
 import '../common/app_img.dart';
@@ -78,10 +79,18 @@ class _ProfilePageState extends State<ProfilePage> {
                         colorCircle: Colors.indigo.shade200,
                         text: "Personal Info"),
                     buildDivider(),
-                    _buildPadding(
-                        imagePath: AppImage.iconBank,
-                        colorCircle: Colors.amber.shade200,
-                        text: "Bank & Card"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CardPageStep1()),
+                        );
+                      },
+                      child: _buildPadding(
+                          imagePath: AppImage.iconBank,
+                          colorCircle: Colors.amber.shade200,
+                          text: "Bank & Card"),
+                    ),
                     buildDivider(),
                     _buildPadding(
                       imagePath: AppImage.iconTransaction,
